@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { siteNavigation } from './navigation';
 
 function MenuIcon({ isOpen }: { isOpen: boolean }) {
@@ -25,15 +26,15 @@ function MenuIcon({ isOpen }: { isOpen: boolean }) {
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  const { pathname: currentPath } = useLocation();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-surface-container-lowest/90 shadow-[0_1px_8px_rgba(0,0,0,0.6)] backdrop-blur-md">
       <div className="relative mx-auto flex min-h-20 w-full items-center justify-between gap-space-md px-gutter-mobile lg:px-gutter">
-        <a
+        <Link
           aria-label="Xordium 5.0 home"
           className="flex min-w-0 items-center gap-space-sm"
-          href="/"
+          to="/"
         >
           <span className="flex size-9 shrink-0 items-center justify-center bg-primary-container font-headline-sm text-headline-sm text-on-primary-container">
             X
@@ -54,7 +55,7 @@ export function Navbar() {
               Ignite x Esports • BIT
             </span>
           </span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-space-xs bg-surface-container-low px-space-sm py-space-sm xl:flex">
           <span
@@ -68,40 +69,40 @@ export function Navbar() {
 
         <nav
           aria-label="Main navigation"
-          className={`${isMenuOpen ? 'flex' : 'hidden'} absolute left-0 top-full z-50 w-full flex-col border-y border-surface-container-high bg-surface-container-lowest p-space-sm lg:static lg:flex lg:w-auto lg:flex-row lg:border-0 lg:bg-transparent lg:p-0`}
+          className={`${isMenuOpen ? 'flex' : 'hidden'} absolute left-0 top-full z-50 w-full flex-col border-y border-surface-container-high bg-surface-container-lowest p-space-sm lg:relative lg:left-[-0.5rem] lg:flex lg:w-auto lg:flex-row lg:border-0 lg:bg-transparent lg:p-0`}
           id="site-navigation"
         >
           {siteNavigation.map(({ href, label }) => {
             const isCurrentPage = currentPath === href;
 
             return (
-              <a
+              <Link
                 aria-current={isCurrentPage ? 'page' : undefined}
                 className={`px-space-md py-space-sm font-label-md uppercase transition-colors hover:bg-surface-container-high hover:text-on-surface ${
                   isCurrentPage
                     ? 'bg-surface-container-high text-on-surface'
                     : 'text-on-surface-variant'
                 }`}
-                href={href}
+                to={href}
                 key={href}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {label}
-              </a>
+              </Link>
             );
           })}
         </nav>
 
         <div className="flex shrink-0 items-center gap-space-sm lg:gap-space-md">
-          <a
+          <Link
             className="hidden items-center justify-center bg-primary-container px-space-lg py-space-sm font-label-md text-label-md uppercase text-on-primary-container transition-colors hover:bg-on-surface hover:text-surface-container-lowest sm:inline-flex"
-            href="/register"
+            to="/register"
           >
             <span className="whitespace-nowrap">Register</span>
             <span aria-hidden="true" className="ml-space-xs font-label-sm">
               [→]
             </span>
-          </a>
+          </Link>
 
           <span
             aria-hidden="true"

@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/layout/SiteLayout';
 import { competitions } from '../data/competitions';
 
@@ -273,12 +274,12 @@ function RegistrationPageContent() {
               additional requirements through official communications.
             </p>
           </section>
-          <a
+          <Link
             className="w-fit border-b border-secondary-container pb-1 font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-on-surface"
-            href="/events"
+            to="/events"
           >
             Return to events <span aria-hidden="true">[→]</span>
-          </a>
+          </Link>
         </aside>
       </div>
     </>

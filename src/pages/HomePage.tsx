@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CompetitionCard } from '../components/features/CompetitionCard';
 import { SiteLayout } from '../components/layout/SiteLayout';
 import { competitions } from '../data/competitions';
@@ -161,18 +162,18 @@ function HomeHero() {
         </p>
         <CountdownTimer />
         <div className="mt-space-xl flex flex-wrap items-center justify-center gap-space-md">
-          <a
+          <Link
             className="inline-flex items-center gap-space-sm border border-primary-container bg-primary-container px-space-lg py-space-md font-label-md text-label-md uppercase text-on-primary-container transition-colors hover:bg-on-surface hover:text-surface-container-lowest"
-            href="#competitions"
+            to="#competitions"
           >
             Explore competitions <span aria-hidden="true">[→]</span>
-          </a>
-          <a
+          </Link>
+          <Link
             className="inline-flex items-center gap-space-sm border border-surface-container-high bg-surface-container-high px-space-lg py-space-md font-label-md text-label-md uppercase text-secondary transition-colors hover:border-secondary-container hover:bg-secondary-container hover:text-on-secondary"
-            href="#campus"
+            to="#campus"
           >
             Festival location <span aria-hidden="true">[→]</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -242,12 +243,12 @@ function CompetitionsSection() {
           <CompetitionCard competition={competition} key={competition.id} />
         ))}
       </div>
-      <a
+      <Link
         className="mt-space-xl inline-flex border border-secondary-container px-space-lg py-space-md font-label-md text-label-md uppercase text-secondary transition-colors hover:bg-secondary-container hover:text-on-secondary"
-        href="/events"
+        to="/events"
       >
         Open events directory <span aria-hidden="true">[→]</span>
-      </a>
+      </Link>
     </section>
   );
 }
@@ -274,15 +275,15 @@ function FestivalInformation() {
             Competition listings are available in the events directory. Official
             festival dates and session times have not been provided here.
           </p>
-          <a
+          <Link
             className="mt-space-lg inline-flex border border-surface-container-high px-space-md py-space-sm font-label-sm text-label-sm uppercase text-on-surface transition-colors hover:border-secondary-container hover:text-secondary"
-            href="/events"
+            to="/events"
           >
             View event listings{' '}
             <span aria-hidden="true" className="ml-space-xs">
               [→]
             </span>
-          </a>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-space-sm lg:col-span-3">
@@ -458,12 +459,12 @@ function HomeContent() {
           <p className="mt-space-sm font-body-md text-body-md text-on-surface-variant">
             Browse the listed competitions and review their event details.
           </p>
-          <a
+          <Link
             className="mt-space-lg border border-primary-container bg-primary-container px-space-lg py-space-md font-label-md text-label-md uppercase text-on-primary-container transition-colors hover:bg-on-surface hover:text-surface-container-lowest"
-            href="/events"
+            to="/events"
           >
             Open events directory <span aria-hidden="true">[→]</span>
-          </a>
+          </Link>
         </div>
       </section>
     </>

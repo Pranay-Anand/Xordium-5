@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/layout/SiteLayout';
 import { competitions } from '../data/competitions';
 
@@ -52,12 +53,12 @@ function DirectoryHeader() {
               for Xordium 5.0 at Birla Institute of Technology, Mesra.
             </p>
           </div>
-          <a
+          <Link
             className="w-fit border border-primary-container bg-primary-container px-space-md py-space-sm font-label-sm text-label-sm uppercase tracking-widest text-on-primary-container transition-colors hover:bg-on-surface hover:text-surface-container-lowest"
-            href="/register"
+            to="/register"
           >
             Register <span aria-hidden="true">[→]</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -95,12 +96,12 @@ function FeaturedCompetition() {
                 {featuredCompetition.summary}
               </p>
             </div>
-            <a
+            <Link
               className="inline-flex w-fit border border-primary-container bg-primary-container px-space-lg py-space-md font-label-md text-label-md uppercase text-on-primary-container transition-colors hover:bg-on-surface hover:text-surface-container-lowest"
-              href="#all-competitions"
+              to="#all-competitions"
             >
               Browse all competitions <span aria-hidden="true">[→]</span>
-            </a>
+            </Link>
           </div>
 
           <div className="relative flex min-h-64 flex-col justify-end overflow-hidden bg-surface-container-lowest p-space-md lg:col-span-5">
@@ -260,18 +261,18 @@ function CompetitionDirectory() {
                     </p>
                   </div>
 
-                  <a
+                  <Link
                     className="mt-auto border-t border-surface-container-highest pt-space-sm font-label-sm text-label-sm uppercase tracking-widest text-secondary transition-colors hover:text-on-surface"
-                    href={`/events#${competition.id}`}
+                    to={`/events#${competition.id}`}
                   >
                     View event listing <span aria-hidden="true">[→]</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="w-fit bg-primary-container px-space-md py-space-sm font-label-sm text-label-sm uppercase tracking-widest text-on-primary-container transition-colors hover:bg-on-surface hover:text-surface-container-lowest"
-                    href={`/register?event=${encodeURIComponent(competition.id)}`}
+                    to={`/register?event=${encodeURIComponent(competition.id)}`}
                   >
                     Register for this event
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}
@@ -337,12 +338,12 @@ function ParticipationGuidance() {
               Contact the organizers through their official event channels.
             </p>
           </div>
-          <a
+          <Link
             className="shrink-0 bg-surface-container-high px-space-lg py-space-sm font-label-sm text-label-sm uppercase tracking-widest text-secondary transition-colors hover:bg-secondary hover:text-surface-container-lowest"
-            href="/about"
+            to="/about"
           >
             About Xordium <span aria-hidden="true">[→]</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

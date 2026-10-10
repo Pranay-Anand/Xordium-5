@@ -1,4 +1,5 @@
 import { siteNavigation } from './navigation';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   return (
@@ -30,12 +31,12 @@ export function Footer() {
             <ul className="flex flex-col gap-space-xs">
               {siteNavigation.map(({ href, label }) => (
                 <li key={href}>
-                  <a
+                  <Link
                     className="inline-flex py-1 font-body-sm text-body-sm transition-colors hover:bg-surface-container-high hover:text-secondary"
-                    href={href}
+                    to={href}
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

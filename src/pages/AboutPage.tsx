@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/layout/SiteLayout';
 import { competitions } from '../data/competitions';
 
@@ -314,12 +315,12 @@ function TrackDirectory() {
                   ))}
                 </ul>
               </div>
-              <a
+              <Link
                 className="ml-space-sm w-fit font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-on-surface"
-                href="/events"
+                to="/events"
               >
                 Explore listings <span aria-hidden="true">[→]</span>
-              </a>
+              </Link>
             </article>
           );
         })}
@@ -504,12 +505,12 @@ function AboutCallToAction() {
             Browse currently listed competitions and their available details.
           </p>
         </div>
-        <a
+        <Link
           className="inline-flex shrink-0 items-center gap-space-sm bg-primary-container px-space-lg py-space-md font-label-md text-label-md uppercase text-on-primary-container transition-colors hover:bg-on-surface hover:text-surface-container-lowest"
-          href="/events"
+          to="/events"
         >
           Explore tracks <span aria-hidden="true">[→]</span>
-        </a>
+        </Link>
       </div>
     </section>
   );
