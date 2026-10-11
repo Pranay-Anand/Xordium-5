@@ -203,7 +203,7 @@ function CompetitionsSection() {
               className="mt-space-xs font-headline-lg-mobile text-headline-lg-mobile uppercase text-on-surface md:font-headline-lg md:text-headline-lg"
               id="competitions-heading"
             >
-              Featured competitions
+              Featured events
             </h2>
           </div>
           <div
@@ -403,7 +403,7 @@ function CampusSection() {
           </p>
           <a
             className="mt-space-lg inline-flex border border-primary-container bg-primary-container px-space-lg py-space-md font-label-sm text-label-sm uppercase text-on-primary-container transition-colors hover:bg-on-surface hover:text-surface-container-lowest"
-            href="https://www.google.com/maps/search/?api=1&query=Birla+Institute+of+Technology+Mesra+Ranchi"
+            href="https://www.google.com/maps/search/?api=1&query=BIT+Patna+campus+Bihar+Veterinary+College+Patna"
             rel="noreferrer"
             target="_blank"
           >

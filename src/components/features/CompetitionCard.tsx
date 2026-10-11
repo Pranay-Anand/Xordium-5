@@ -10,7 +10,10 @@ export function CompetitionCard({ competition }: { competition: Competition }) {
   return (
     <article className="flex h-full flex-col border border-surface-container-high bg-surface-container-low p-space-md transition-colors hover:bg-surface-container">
       <div className="relative mb-space-md">
-        <PageArtwork label={competition.artworkLabel} />
+        <PageArtwork
+          imageSrc={competition.thumbnail}
+          label={competition.artworkLabel}
+        />
         <span
           aria-hidden="true"
           className={`absolute right-space-sm top-space-sm size-8 border-r-2 border-t-2 ${accentClasses[competition.accent]}`}

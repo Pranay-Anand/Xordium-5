@@ -93,13 +93,13 @@ function ContactInformation() {
               Venue // BIT Mesra
             </p>
             <p className="mt-space-xs font-headline-sm text-headline-sm uppercase text-on-surface">
-              Ranchi, Jharkhand
+              Patna, BIHAR
             </p>
           </div>
         </div>
         <a
           className="mt-space-md inline-flex border border-secondary-container px-space-md py-space-sm font-label-sm text-label-sm uppercase tracking-wider text-secondary transition-colors hover:bg-secondary-container hover:text-on-secondary"
-          href="https://www.google.com/maps/search/?api=1&query=Birla+Institute+of+Technology+Mesra+Ranchi"
+          href="https://www.google.com/maps/place/Birla+Institute+of+Technology,+Patna/@25.5955804,85.0834589,17z/data=!3m1!4b1!4m6!3m5!1s0x39ed57e9cdad8b55:0xb6416f459e4204d2!8m2!3d25.5955756!4d85.0860338!16s%2Fm%2F063zqnd?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
           rel="noreferrer"
           target="_blank"
         >

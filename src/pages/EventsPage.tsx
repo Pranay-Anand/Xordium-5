@@ -9,7 +9,7 @@ const trackFilters = [
 ];
 
 const featuredCompetition = competitions.find(
-  ({ id }) => id === 'synapse-forge',
+  ({ id }) => id === '12-hour-hackathon',
 );
 
 function DirectoryHeader() {
@@ -32,13 +32,13 @@ function DirectoryHeader() {
             //
           </span>
           <span className="font-label-sm text-label-sm uppercase tracking-wider text-secondary">
-            Competition directory
+            Event directory
           </span>
           <span className="font-label-sm text-label-sm tracking-widest text-on-surface-variant">
             //
           </span>
           <span className="font-label-sm text-label-sm text-on-surface-variant">
-            {competitions.length} current listings
+            {competitions.length} current events
           </span>
         </div>
 
@@ -77,14 +77,14 @@ function FeaturedCompetition() {
     >
       <div className="relative overflow-hidden bg-surface-container p-space-lg sm:p-space-xl">
         <span className="absolute right-0 top-0 bg-primary-container px-space-md py-space-xs font-label-sm text-label-sm uppercase tracking-widest text-on-primary-container">
-          Featured listing // {featuredCompetition.category}
+          Featured event // {featuredCompetition.category}
         </span>
 
         <div className="grid gap-space-xl pt-space-lg lg:grid-cols-12">
           <div className="flex flex-col justify-between gap-space-xl lg:col-span-7">
             <div>
               <p className="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container">
-                Competition listing // Xordium 5.0
+                Event // Xordium 5.0
               </p>
               <h2
                 className="mt-space-md font-headline-lg-mobile text-headline-lg-mobile uppercase text-on-surface md:font-headline-lg md:text-headline-lg"
@@ -100,7 +100,7 @@ function FeaturedCompetition() {
               className="inline-flex w-fit border border-primary-container bg-primary-container px-space-lg py-space-md font-label-md text-label-md uppercase text-on-primary-container transition-colors hover:bg-on-surface hover:text-surface-container-lowest"
               to="#all-competitions"
             >
-              Browse all competitions <span aria-hidden="true">[→]</span>
+              Browse all events <span aria-hidden="true">[→]</span>
             </Link>
           </div>
 
@@ -161,18 +161,18 @@ function CompetitionDirectory() {
             <span aria-hidden="true" className="mr-space-sm text-secondary">
               /
             </span>
-            <span className="sr-only">Search competitions</span>
+            <span className="sr-only">Search events</span>
             <input
               className="min-w-0 flex-1 bg-transparent py-space-sm font-body-sm text-body-sm uppercase text-on-surface outline-none placeholder:text-on-surface-variant"
               onChange={(event) => setSearchQuery(event.target.value)}
-              placeholder="Search competitions or categories"
+              placeholder="Search events or categories"
               type="search"
               value={searchQuery}
             />
           </label>
 
           <div
-            aria-label="Filter competitions by category"
+            aria-label="Filter events by category"
             className="mt-space-md flex flex-wrap gap-space-xs"
             role="group"
           >
@@ -207,7 +207,7 @@ function CompetitionDirectory() {
               className="font-headline-sm text-headline-sm uppercase text-on-surface"
               id="all-competitions-heading"
             >
-              Competition listings
+              Event listings
             </h2>
           </div>
           <p
@@ -231,7 +231,11 @@ function CompetitionDirectory() {
                   <div
                     aria-hidden="true"
                     className="absolute inset-0 bg-cover bg-center opacity-45 transition-opacity group-hover:opacity-65"
-                    style={{ backgroundImage: "url('/xordium-city-bg.png')" }}
+                    style={{
+                      backgroundImage: `url('${
+                        competition.thumbnail ?? '/xordium-city-bg.png'
+                      }')`,
+                    }}
                   />
                   <div
                     aria-hidden="true"
@@ -279,7 +283,7 @@ function CompetitionDirectory() {
           </div>
         ) : (
           <p className="bg-surface-container p-space-lg font-body-md text-body-md text-on-surface-variant">
-            No competitions match this search. Try a different keyword or
+            No events match this search. Try a different keyword or
             category.
           </p>
         )}

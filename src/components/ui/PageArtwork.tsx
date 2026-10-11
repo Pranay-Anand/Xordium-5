@@ -1,9 +1,14 @@
 type PageArtworkProps = {
+  imageSrc?: string;
   label: string;
   variant?: 'wide' | 'square';
 };
 
-export function PageArtwork({ label, variant = 'wide' }: PageArtworkProps) {
+export function PageArtwork({
+  imageSrc,
+  label,
+  variant = 'wide',
+}: PageArtworkProps) {
   return (
     <div
       aria-hidden="true"
@@ -11,6 +16,15 @@ export function PageArtwork({ label, variant = 'wide' }: PageArtworkProps) {
         variant === 'wide' ? 'aspect-[16/9]' : 'aspect-square'
       }`}
     >
+      {imageSrc && (
+        <img
+          alt=""
+          className="absolute inset-0 size-full object-cover"
+          decoding="async"
+          loading="lazy"
+          src={imageSrc}
+        />
+      )}
       <div className="absolute inset-0 grid grid-cols-8 grid-rows-6">
         {Array.from({ length: 48 }, (_, index) => (
           <span
